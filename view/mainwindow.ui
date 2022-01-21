@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>475</width>
+    <height>391</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(238, 255, 254);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QTableWidget" name="tableWidget">
+      <column>
+       <property name="text">
+        <string>Nome</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Profissão</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>CPF</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Endereço</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Funcionários&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>475</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="Novo"/>
+    <addaction name="Pesquisar"/>
+    <addaction name="Editar"/>
+    <addaction name="Excluir"/>
+    <addaction name="Atualizar"/>
+   </widget>
+   <addaction name="menuMenu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="Novo"/>
+   <addaction name="Pesquisar"/>
+   <addaction name="Editar"/>
+   <addaction name="Excluir"/>
+   <addaction name="Atualizar"/>
+  </widget>
+  <action name="Pesquisar">
+   <property name="icon">
+    <iconset resource="../icones/principal.qrc">
+     <normaloff>:/principal/business_man_usersearch_thesearch_theclient_2356.png</normaloff>:/principal/business_man_usersearch_thesearch_theclient_2356.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pesquisar</string>
+   </property>
+   <property name="toolTip">
+    <string>Pesquisar funcionário</string>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="priority">
+    <enum>QAction::NormalPriority</enum>
+   </property>
+  </action>
+  <action name="Editar">
+   <property name="icon">
+    <iconset resource="../icones/principal.qrc">
+     <normaloff>:/principal/businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png</normaloff>:/principal/businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png</iconset>
+   </property>
+   <property name="text">
+    <string>Editar</string>
+   </property>
+   <property name="toolTip">
+    <string>Editar funcionário</string>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="Excluir">
+   <property name="icon">
+    <iconset resource="../icones/principal.qrc">
+     <normaloff>:/principal/delete_delete_deleteusers_delete_male_user_maleclient_2348.png</normaloff>:/principal/delete_delete_deleteusers_delete_male_user_maleclient_2348.png</iconset>
+   </property>
+   <property name="text">
+    <string>Excluir</string>
+   </property>
+   <property name="toolTip">
+    <string>Excluir funcionário</string>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="Atualizar">
+   <property name="icon">
+    <iconset resource="../icones/principal.qrc">
+     <normaloff>:/principal/1485969921-5-refresh_78908.png</normaloff>:/principal/1485969921-5-refresh_78908.png</iconset>
+   </property>
+   <property name="text">
+    <string>Atualizar</string>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="Novo">
+   <property name="icon">
+    <iconset resource="../icones/principal.qrc">
+     <normaloff>:/principal/business_application_addmale_useradd_insert_add_user_client_2312.png</normaloff>:/principal/business_application_addmale_useradd_insert_add_user_client_2312.png</iconset>
+   </property>
+   <property name="text">
+    <string>Novo</string>
+   </property>
+   <property name="toolTip">
+    <string>Novo Funcionário</string>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../icones/principal.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,10 @@
+<RCC>
+  <qresource prefix="login">
+    <file>4092564-about-mobile-ui-profile-ui-user-website_114033.png</file>
+    <file>business_application_addmale_useradd_insert_add_user_client_2312.png</file>
+    <file>business_man_usersearch_thesearch_theclient_2356.png</file>
+    <file>businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png</file>
+    <file>delete_delete_deleteusers_delete_male_user_maleclient_2348.png</file>
+    <file>mbrilock_99595.png</file>
+  </qresource>
+</RCC>
