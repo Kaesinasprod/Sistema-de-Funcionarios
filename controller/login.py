@@ -18,5 +18,6 @@ class Login(QDialog):
         if usuario == user and password == senha:
             self.win = MainWindow()
             self.win.show()
+            self.hide()
         else:
             print("Erro")

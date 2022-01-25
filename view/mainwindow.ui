@@ -18,34 +18,17 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="QTableWidget" name="tableWidget">
-      <column>
-       <property name="text">
-        <string>Nome</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Profissão</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>CPF</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Endereço</string>
-       </property>
-      </column>
-     </widget>
-    </item>
     <item row="0" column="0">
      <widget class="QLabel" name="label">
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Funcionários&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QStackedWidget" name="painel">
+      <property name="currentIndex">
+       <number>-1</number>
       </property>
      </widget>
     </item>
@@ -91,8 +74,8 @@
   </widget>
   <action name="Pesquisar">
    <property name="icon">
-    <iconset resource="../icones/principal.qrc">
-     <normaloff>:/principal/business_man_usersearch_thesearch_theclient_2356.png</normaloff>:/principal/business_man_usersearch_thesearch_theclient_2356.png</iconset>
+    <iconset>
+     <normaloff>../icones/business_man_usersearch_thesearch_theclient_2356.png</normaloff>../icones/business_man_usersearch_thesearch_theclient_2356.png</iconset>
    </property>
    <property name="text">
     <string>Pesquisar</string>
@@ -112,8 +95,8 @@
   </action>
   <action name="Editar">
    <property name="icon">
-    <iconset resource="../icones/principal.qrc">
-     <normaloff>:/principal/businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png</normaloff>:/principal/businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png</iconset>
+    <iconset>
+     <normaloff>../icones/businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png</normaloff>../icones/businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png</iconset>
    </property>
    <property name="text">
     <string>Editar</string>
@@ -130,8 +113,8 @@
   </action>
   <action name="Excluir">
    <property name="icon">
-    <iconset resource="../icones/principal.qrc">
-     <normaloff>:/principal/delete_delete_deleteusers_delete_male_user_maleclient_2348.png</normaloff>:/principal/delete_delete_deleteusers_delete_male_user_maleclient_2348.png</iconset>
+    <iconset>
+     <normaloff>../icones/delete_delete_deleteusers_delete_male_user_maleclient_2348.png</normaloff>../icones/delete_delete_deleteusers_delete_male_user_maleclient_2348.png</iconset>
    </property>
    <property name="text">
     <string>Excluir</string>
@@ -148,8 +131,8 @@
   </action>
   <action name="Atualizar">
    <property name="icon">
-    <iconset resource="../icones/principal.qrc">
-     <normaloff>:/principal/1485969921-5-refresh_78908.png</normaloff>:/principal/1485969921-5-refresh_78908.png</iconset>
+    <iconset>
+     <normaloff>../icones/1485969921-5-refresh_78908.png</normaloff>../icones/1485969921-5-refresh_78908.png</iconset>
    </property>
    <property name="text">
     <string>Atualizar</string>
@@ -166,8 +149,8 @@
   </action>
   <action name="Novo">
    <property name="icon">
-    <iconset resource="../icones/principal.qrc">
-     <normaloff>:/principal/business_application_addmale_useradd_insert_add_user_client_2312.png</normaloff>:/principal/business_application_addmale_useradd_insert_add_user_client_2312.png</iconset>
+    <iconset>
+     <normaloff>../icones/business_application_addmale_useradd_insert_add_user_client_2312.png</normaloff>../icones/business_application_addmale_useradd_insert_add_user_client_2312.png</iconset>
    </property>
    <property name="text">
     <string>Novo</string>
