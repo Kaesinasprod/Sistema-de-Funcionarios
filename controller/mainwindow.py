@@ -6,14 +6,10 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('view/mainwindow.ui', self)
-        self.Novo.triggered.connect(self.salvar_funcionario)
-        
-        #INSERE NA PÁGINA INICIAL
-        self.show_funcionarios_page
-
-    def salvar_funcionario(self):
-        self.win = Cadastro()
-        self.win.show()
+        # carrega a página inicial ao criar a janela
+        self.show_funcionarios_page()
+        #abre a página de cadastro
+        self.Novo_btn.clicked.connect(self.show_cadastro_page)
 
     def fechar_page(self):
         pass
@@ -23,6 +19,6 @@ class MainWindow(QMainWindow):
         self.painel.setCurrentIndex(0)
 
     def show_cadastro_page(self):
-        self.painel.insertWidget(1, Cadastro())
-        self.painel.setCurrentIndex(1)
+        self.painel.insertWidget(0, Cadastro(self))
+        self.painel.setCurrentIndex(0)
 

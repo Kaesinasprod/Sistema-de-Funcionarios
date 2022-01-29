@@ -7,7 +7,10 @@ class FuncionariosPage(QWidget):
         super().__init__()
         uic.loadUi('view/funcionarios_page.ui', self)
 
+        self.load()
+
     def load(self):
         lista = func_dao.lista
         for c in lista:
             self.painel_func.addWidget(CardFunc(c))
+        
