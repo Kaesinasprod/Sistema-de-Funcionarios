@@ -7,7 +7,6 @@ class Login(QDialog):
         uic.loadUi('view/login.ui', self)
         self.entrar_btn.clicked.connect(self.login)
         self.win = None
-        
     
 
     def login(self):

@@ -15,10 +15,10 @@ class MainWindow(QMainWindow):
         pass
 
     def show_funcionarios_page(self):
-        self.painel.insertWidget(0, FuncionariosPage())
+        self.painel.insertWidget(0, FuncionariosPage(self))
         self.painel.setCurrentIndex(0)
 
-    def show_cadastro_page(self):
-        self.painel.insertWidget(0, Cadastro(self))
+    def show_cadastro_page(self, funcionario=None):
+        self.painel.insertWidget(0, Cadastro(self, funcionario))
         self.painel.setCurrentIndex(0)
 

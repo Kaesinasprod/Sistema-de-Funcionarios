@@ -1,17 +1,20 @@
-from pip import main
 import classes.funcionario_dao as func_dao
 from qt_core import *
 from classes.funcionario import Funcionario
-from controller.funcionarios_page import FuncionariosPage
+from controller.mainwindow import *
 
 class Cadastro(QWidget):
-    def __init__(self, mainwindow):
+    def __init__(self, mainwindow, funcionario=None):
         super().__init__()
         uic.loadUi('view/cadastro.ui', self)
         self.cadastrar_btn.clicked.connect(self.salvar_funcionario)
-        self.cancelar_btn.clicked.connect(self.fechar_page)
+        self.fechar_btn.clicked.connect(self.fechar_page)
         
         self.mainwindow = mainwindow
+        self.funcionario = funcionario
+        if funcionario != None:
+            self.carrega_funcionario()
+            print(funcionario.nome)
 
     def salvar_funcionario(self):
         nome = self.cad_nome.text()
@@ -22,9 +25,17 @@ class Cadastro(QWidget):
         novo = Funcionario(None, nome, prof, cpf, endereco)
         #INSERE NO BANCO DE DADOS
         func_dao.insert(novo)
-        #REFERENCIA DO MAINWINDOW
+        #REFERENCIA DO MAINWINDOW, CARREGA OS DADOS NO MAINWINDOW
         self.mainwindow.show_funcionarios_page()
 
     def fechar_page(self):
-        self.close()
+        self.mainwindow.show_funcionarios_page()
+
+
+    def carrega_funcionario(self):
+        self.cad_nome.setText(self.funcionario.nome)
+        self.cad_prof.setText(self.funcionario.prof)
+        self.cad_cpf.setText(self.funcionario.cpf)
+        self.cad_end.setText(self.funcionario.end)
+
 
