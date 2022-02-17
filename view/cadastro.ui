@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>606</width>
-    <height>399</height>
+    <width>543</width>
+    <height>330</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,27 +17,7 @@
    <string notr="true">background-color: rgb(238, 255, 254);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
-   <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter">
-    <widget class="QLabel" name="label">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Coloque os dados do funcionário</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0" rowspan="3" colspan="2">
+   <item row="0" column="0" rowspan="3" colspan="2">
     <widget class="QFrame" name="frame">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -58,24 +38,14 @@
          <string/>
         </property>
         <property name="placeholderText">
-         <string>Digite seu nome</string>
+         <string>Digite seu nome completo</string>
         </property>
        </widget>
       </item>
       <item row="3" column="1">
        <widget class="QLineEdit" name="cad_end">
         <property name="placeholderText">
-         <string>Digite seu Endereço</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_3">
-        <property name="styleSheet">
-         <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
-        </property>
-        <property name="text">
-         <string>Profissão</string>
+         <string>Digite seu Endereço e CEP</string>
         </property>
        </widget>
       </item>
@@ -88,6 +58,12 @@
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_4">
+        <property name="font">
+         <font>
+          <family>Lucida Console</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>CPF</string>
         </property>
@@ -102,6 +78,12 @@
       </item>
       <item row="0" column="0">
        <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>Lucida Console</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Nome</string>
         </property>
@@ -109,15 +91,34 @@
       </item>
       <item row="3" column="0">
        <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <family>Lucida Console</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
         <property name="text">
-         <string>Endereço</string>
+         <string>Endereço/CEP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <family>Lucida Console</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Profissão</string>
         </property>
        </widget>
       </item>
      </layout>
     </widget>
    </item>
-   <item row="4" column="1">
+   <item row="3" column="1">
     <widget class="QFrame" name="frame_2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">

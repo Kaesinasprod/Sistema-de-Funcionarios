@@ -12,19 +12,28 @@ class Cadastro(QWidget):
         
         self.mainwindow = mainwindow
         self.funcionario = funcionario
-        if funcionario != None:
+        if funcionario != False:
             self.carrega_funcionario()
-            print(funcionario.nome)
 
     def salvar_funcionario(self):
         nome = self.cad_nome.text()
         prof = self.cad_prof.text()
         cpf = self.cad_cpf.text()
         endereco = self.cad_end.text()
-        #CRIA O OBJETO FUNCIONARIOS
-        novo = Funcionario(None, nome, prof, cpf, endereco)
-        #INSERE NO BANCO DE DADOS
-        func_dao.insert(novo)
+        
+        if self.funcionario != False: #edição
+            funcionario_editado = Funcionario(self.funcionario.id, nome, prof, cpf, endereco)
+            #INSERE NO BANCO DE DADOS
+            func_dao.update_lista(funcionario_editado)
+
+
+        else:
+            #CRIA O OBJETO FUNCIONARIO
+            novo_funcionario = Funcionario(None, nome, prof, cpf, endereco)
+            #INSERE NO BANCO DE DADOS
+            func_dao.insert(novo_funcionario)
+
+        
         #REFERENCIA DO MAINWINDOW, CARREGA OS DADOS NO MAINWINDOW
         self.mainwindow.show_funcionarios_page()
 

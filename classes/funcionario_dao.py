@@ -48,6 +48,27 @@ def update_lixeira(id, deletado):
     finally:
         con.close()
 
+def selectLixeira(): #SELECIONA FUNCIONARIOS PARA LIXEIRA
+    lista = []
+    try:
+        con = database.conectar()
+        cursor = con.cursor()
+        sql = """SELECT * FROM Funcionarios WHERE deletado = 1 ORDER BY upper(nome);"""
+        cursor.execute(sql)
+        result = cursor.fetchall() #RETORNA UMA LISTA COM OS DADOS DE CADA FUNCIONARIO
+        for r in result:
+            novo_funcionario = Funcionario(r[0], r[1], r[2], r[3], r[4], r[5])
+            lista.append(novo_funcionario)
+
+    except Exception as e:
+        print(e)
+
+    finally:
+
+        con.close()
+    return lista
+
+
 def delete(id): #DELETA
     try:
         con = database.conectar()
@@ -69,7 +90,6 @@ def selectAll(): #PEGA TUDO
         cursor.execute(sql)
         result = cursor.fetchall() #RETORNA UMA LISTA COM OS DADOS DE CADA FUNCIONARIO
         for r in result:
-            print(r[1])
             novo_funcionario = Funcionario(r[0], r[1], r[2], r[3], r[4], r[5])
             lista.append(novo_funcionario)
 
