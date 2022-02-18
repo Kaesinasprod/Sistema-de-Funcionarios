@@ -16,6 +16,14 @@ class MainWindow(QMainWindow):
         #abre a página inicial
         self.pesquisar_btn.clicked.connect(self.show_funcionarios_page)
 
+        self.pesquisa.textEdited.connect(self.text_edited)
+
+        self.c = None
+
+    def text_edited(self, txt_pesquisa):
+        self.painel.insertWidget(0, FuncionariosPage(self, txt_pesquisa))
+        self.painel.setCurrentIndex(0)
+
     def fechar_page(self):
         pass
 
@@ -30,4 +38,8 @@ class MainWindow(QMainWindow):
     def show_lixeira(self):
         self.painel.insertWidget(0, Lixeira(self))
         self.painel.setCurrentIndex(0)
+    
+    def teste(self, funcionario=None):
+        self.c = Cadastro(self, funcionario)
+        self.c.show()
 
