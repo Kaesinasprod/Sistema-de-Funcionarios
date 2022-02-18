@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>585</width>
-    <height>80</height>
+    <width>518</width>
+    <height>82</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -34,7 +34,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QLabel" name="icon">
         <property name="sizePolicy">
@@ -58,7 +58,6 @@
         <property name="font">
          <font>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -72,10 +71,16 @@
          <enum>QFrame::Plain</enum>
         </property>
         <property name="text">
-         <string>icon</string>
+         <string/>
         </property>
         <property name="textFormat">
          <enum>Qt::AutoText</enum>
+        </property>
+        <property name="pixmap">
+         <pixmap>../icones/func.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -83,38 +88,48 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="nome">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Nome</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="prof">
-        <property name="text">
-         <string>Profissão</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="cpf">
-        <property name="text">
-         <string>CPF</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="end">
-        <property name="text">
-         <string>Endereço</string>
-        </property>
-       </widget>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QLabel" name="nome">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Nome</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="cpf">
+          <property name="text">
+           <string>CPF</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="prof">
+          <property name="text">
+           <string>Profissão</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="end">
+          <property name="maximumSize">
+           <size>
+            <width>250</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Endereço</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>

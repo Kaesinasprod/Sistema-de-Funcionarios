@@ -36,9 +36,11 @@ class Cadastro(QWidget):
         
         #REFERENCIA DO MAINWINDOW, CARREGA OS DADOS NO MAINWINDOW
         self.mainwindow.show_funcionarios_page()
+        self.close()
 
     def fechar_page(self):
         self.mainwindow.show_funcionarios_page()
+        self.close()
 
 
     def carrega_funcionario(self):
