@@ -20,10 +20,10 @@ class Cadastro(QWidget):
         setor = self.cad_setor.text()
         cpf = self.cad_cpf.text()
         endereco = self.cad_end.text()
-        #situacao = self.cad_situ.text()
+        situacao = 'trabalhando'
         obs = self.cad_obs.text()
-        #sexo = self.cad_sexo.text()
-        #estado_civil = self.cad_civil.text()
+        sexo = 'masculino'
+        estado_civil = 'solteiro'
         cep = self.cad_cep.text()
         telefone = self.cad_telefone.text()
         email = self.cad_email.text()
@@ -31,11 +31,13 @@ class Cadastro(QWidget):
         cargo = self.cad_cargo.text()
         escolaridade = self.cad_escolaridade.text()
         data_nascimento = self.cad_data.text()
+        self.close()
 
         
         if self.funcionario != False: #edição
             funcionario_editado = Funcionario(self.funcionario.id, nome, setor, cpf, endereco, obs,
-            cep, telefone, email, salario, cargo, escolaridade, data_nascimento)
+            cep, telefone, email, salario, cargo, escolaridade, data_nascimento, situacao, sexo,
+            estado_civil)
             #INSERE NO BANCO DE DADOS
             func_dao.update_lista(funcionario_editado)
 
@@ -43,7 +45,7 @@ class Cadastro(QWidget):
         else:
             #CRIA O OBJETO FUNCIONARIO
             novo_funcionario = Funcionario(None, nome, setor, cpf, endereco, obs,
-            cep, telefone, email, salario, cargo, escolaridade, data_nascimento)
+            cep, telefone, email, salario, cargo, escolaridade, data_nascimento, sexo, estado_civil, situacao)
             #INSERE NO BANCO DE DADOS
             func_dao.insert(novo_funcionario)
 
@@ -52,7 +54,7 @@ class Cadastro(QWidget):
         self.mainwindow.show_funcionarios_page()
 
     def fechar_page(self):
-        self.mainwindow.show_funcionarios_page()
+        self.close()
 
 
     def carrega_funcionario(self):
@@ -60,10 +62,10 @@ class Cadastro(QWidget):
         self.cad_setor.setText(self.funcionario.setor)
         self.cad_cpf.setText(self.funcionario.cpf)
         self.cad_end.setText(self.funcionario.end)
-        #self.cad_situ.setText(self.funcionario.situ)
+        #self.situacao.setText(self.funcionario.situ)
         self.cad_obs.setText(self.funcionario.obs)
-        #self.cad_sexo.setText(self.funcionario.sexo)
-        #self.cad_civil.setText(self.funcionario.estado_civil)
+        #self.sexo.setText(self.funcionario.sexo)
+        #self.estado_civil.setText(self.funcionario.estado_civil)
         self.cad_cep.setText(self.funcionario.cep)
         self.cad_telefone.setText(self.funcionario.telefone)
         self.cad_email.setText(self.funcionario.email)
