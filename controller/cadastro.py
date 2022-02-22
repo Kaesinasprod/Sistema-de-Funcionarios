@@ -20,10 +20,13 @@ class Cadastro(QWidget):
         setor = self.cad_setor.text()
         cpf = self.cad_cpf.text()
         endereco = self.cad_end.text()
-        situacao = 'trabalhando'
+
+        #GROUPBOX
+        situ = 'Trabalhando' if self.rb_situacao.isChecked() == True else 'Afastado'
+        sexo = 'Masculino' if self.rb_sexo.isChecked() == True else 'Feminino'
+        estado_civil = 'Solteiro' if self.rb_civil.isChecked() == True else 'Casado'
+
         obs = self.cad_obs.text()
-        sexo = 'masculino'
-        estado_civil = 'solteiro'
         cep = self.cad_cep.text()
         telefone = self.cad_telefone.text()
         email = self.cad_email.text()
@@ -36,7 +39,7 @@ class Cadastro(QWidget):
         
         if self.funcionario != False: #edição
             funcionario_editado = Funcionario(self.funcionario.id, nome, setor, cpf, endereco, obs,
-            cep, telefone, email, salario, cargo, escolaridade, data_nascimento, situacao, sexo,
+            cep, telefone, email, salario, cargo, escolaridade, data_nascimento, situ, sexo,
             estado_civil)
             #INSERE NO BANCO DE DADOS
             func_dao.update_lista(funcionario_editado)
@@ -45,7 +48,7 @@ class Cadastro(QWidget):
         else:
             #CRIA O OBJETO FUNCIONARIO
             novo_funcionario = Funcionario(None, nome, setor, cpf, endereco, obs,
-            cep, telefone, email, salario, cargo, escolaridade, data_nascimento, sexo, estado_civil, situacao)
+            cep, telefone, email, salario, cargo, escolaridade, data_nascimento, sexo, estado_civil, situ)
             #INSERE NO BANCO DE DADOS
             func_dao.insert(novo_funcionario)
 
@@ -62,10 +65,17 @@ class Cadastro(QWidget):
         self.cad_setor.setText(self.funcionario.setor)
         self.cad_cpf.setText(self.funcionario.cpf)
         self.cad_end.setText(self.funcionario.end)
-        #self.situacao.setText(self.funcionario.situ)
         self.cad_obs.setText(self.funcionario.obs)
-        #self.sexo.setText(self.funcionario.sexo)
-        #self.estado_civil.setText(self.funcionario.estado_civil)
+
+        self.situ_trabalhando.setChecked(True if self.funcionario.situ == 'Trabalhando' else False)
+        self.situ_afastado.setChecked(True if self.funcionario.situ == 'Afastado' else False)
+
+        self.sexo_masculino.setChecked(True if self.funcionario.sexo == 'Masculino' else False)
+        self.sexo_feminino.setChecked(True if self.funcionario.sexo == 'Feminino' else False)
+
+        self.estado_civil_solteiro.setChecked(True if self.funcionario.estado_civil == 'Solteiro' else False)
+        self.estado_civil_casado.setChecked(True if self.funcionario.estado_civil == 'Casado' else False)
+
         self.cad_cep.setText(self.funcionario.cep)
         self.cad_telefone.setText(self.funcionario.telefone)
         self.cad_email.setText(self.funcionario.email)

@@ -89,7 +89,7 @@ def selectAll(txt_pesquisa): #PEGA TUDO
     try:
         con = database.conectar()
         cursor = con.cursor()
-        sql = """SELECT * FROM Funcionarios WHERE nome like ? or cpf like ? and deletado = 0 ORDER BY upper(nome);"""
+        sql = """SELECT * FROM Funcionarios WHERE (nome like ? or cpf like ?) and deletado = 0 ORDER BY upper(nome);"""
         cursor.execute(sql, ['%'+txt_pesquisa+'%', '%'+txt_pesquisa+'%'])
         result = cursor.fetchall() #RETORNA UMA LISTA COM OS DADOS DE CADA FUNCIONARIO
         for r in result:
